@@ -89,7 +89,7 @@ const PlayersList = (props) => {
         <ul className="list-group">
           <div className="list-group-item d-flex justify-content-between" style={{ backgroundColor: "#ffc107" }}>
             <strong>Full Name</strong>
-            <strong><span className="mr-5">Game Session</span></strong>
+            <strong><span className="mr-5">Game Session or Full Name</span></strong>
             <strong><span className="mr-5">Action</span></strong>
           </div>
 
