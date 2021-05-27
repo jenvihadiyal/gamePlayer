@@ -20,12 +20,16 @@ const remove = id => {
   return http.delete(`/PlayerContactDetails/${id}`);
 };
 
-
+const findByTitle = title => {
+  console.log("jiooo",title.toLowerCase())
+  return http.get(`/PlayerContactDetails?Sessions=${title}`);
+};
 
 export default {
   getAll,
   get,
   create,
   update,
-  remove
+  remove,
+  findByTitle
 };

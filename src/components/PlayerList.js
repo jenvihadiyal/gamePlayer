@@ -7,7 +7,9 @@ const PlayersList = (props) => {
   const [Players, setPlayers] = useState([]);
   const [currentPlayer, setCurrentPlayer] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(-1);
- 
+  const [searchTitle, setSearchTitle] = useState("");
+  const [searchPlayer,setSearchPlayer]=useState('')
+
   //calling api
   useEffect(() => {
     retrievePlayers();
@@ -19,6 +21,7 @@ const PlayersList = (props) => {
     PlayerDataService.getAll()
       .then(response => {
         setPlayers(response.data);
+        setSearchPlayer(response.data)
       })
       .catch(e => {
         console.log(e);
@@ -42,6 +45,21 @@ const PlayersList = (props) => {
       });
   };
 
+  const onChangeSearchTitle = e => {
+    const searchTitle = e.target.value.toLowerCase();
+    console.log(e.target.value);
+    setSearchTitle(searchTitle);
+    let newData = searchPlayer && searchPlayer != undefined && searchPlayer?.filter(search=>(
+      (search.Sessions?.toLowerCase().includes(searchTitle)
+      ||search.firstName?.toLowerCase().includes(searchTitle)
+      ||search.lastName.toLowerCase().includes(searchTitle))));
+    console.log(e.target.value)
+    console.log(e.target.value === undefined ,e.target.value,e.target.value==='null',Players)
+
+    setPlayers(newData)
+ 
+  };
+
 
   const editPlayer=(id)=>{
     props.history.push(constant.player+"/"+ id)
@@ -49,7 +67,18 @@ const PlayersList = (props) => {
 
   return (
     <div className="list row">
-      
+      <div className="col-md-8">
+        <div className="input-group mb-3">
+          <input
+            type="search"
+            className="form-control"
+            placeholder="Search by Game Session"
+            value={searchTitle}
+            onChange={onChangeSearchTitle}
+          />
+          
+        </div>
+      </div>
       <div className="col-md-9 col-12">
         <div className="d-flex justify-content-between mt-3 mb-3">
         <h4>Player List</h4>
