@@ -1,0 +1,32 @@
+{
+  "PlayerContactDetails": [
+    {
+      "id": 16,
+      "firstName": "Tommy",
+      "lastName": "Oliver",
+      "contactNumber": "07989444568",
+      "campaignName": "The Sea Witch"
+    },
+    {
+      "id": 17,
+      "firstName": "Jason",
+      "lastName": "Scott",
+      "contactNumber": "07774854987",
+      "campaignName": "The Sea Witch"
+    },
+    {
+      "id": 18,
+      "firstName": "Zack",
+      "lastName": "Taylor",
+      "contactNumber": "07845222547",
+      "campaignName": "The Sea Witch"
+    },
+    {
+      "id": 19,
+      "firstName": "Joyce",
+      "lastName": "Byers",
+      "contactNumber": "07954668187",
+      "campaignName": "Tomb of Horrors"
+    }
+  ]
+}
