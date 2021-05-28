@@ -31,11 +31,16 @@ $ npm start
 # points Covered 
 
 1 : we can see a list of all players displaying their full name and game session
+
 2 : we can see individual view for each player which shows their first name, last name, contact
     number and game session
+
 3 : we can add new players
+
 4 : we can delete existing players
+
 5 : we can able to edit players
+
 6 : we can filter by game session or full name on the list view
 
 # Follow-Up Questions
